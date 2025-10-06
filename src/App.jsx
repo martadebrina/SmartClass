@@ -1,21 +1,14 @@
-import { useEffect } from "react";
-import { db } from "./firebase";
-import { collection, getDocs } from "firebase/firestore";
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 
-function App() {
-  useEffect(() => {
-    async function testConnection() {
-      const querySnapshot = await getDocs(collection(db, "test"));
-      console.log("Firestore connected! Docs:", querySnapshot.size);
-    }
-    testConnection();
-  }, []);
 
+export default function App() {
   return (
-    <div style={{ textAlign: "center", marginTop: "30vh" }}>
-      <h1>SmartClass</h1>
-    </div>
+    <BrowserRouter>
+      <div className="app-container">
+        <Navbar />
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;

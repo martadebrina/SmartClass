@@ -1,0 +1,9 @@
+.navbar{
+    background-color: #333;
+    top: 0;
+    width: 100%;
+    display: flex;
+}
+.navbar-left{
+    size: 5px;
+}
